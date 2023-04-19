@@ -1,0 +1,25 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3307/user?useSSL=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+
+  application:
+    name: orderService
+feign:
+  client:
+    config:
+      default: #这里用default就是全局配置，如果写服务名称，则是针对某个微服务的配置
+        loggerLevel: BASIC
+  httpclient:
+    enabled: true #开启feign对httpClient的支持
+    max-connections: 200 #最大的连接数
+    max-connections-per-route: 50 #每个路径的最大连接数
+#
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://127.0.0.1:10086/eureka/
