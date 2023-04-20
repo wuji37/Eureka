@@ -37,4 +37,12 @@ public class UserController {
         System.err.println(dateformat);
         return LocalDateTime.now().format(DateTimeFormatter.ofPattern(dateformat, Locale.CHINA));
     }
+
+    @Value("${pattern.sharedDocument}")
+    private String share;
+
+    @GetMapping("prop")
+    public String getSharedDocument(){
+        return share;
+    }
 }
