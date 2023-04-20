@@ -18,23 +18,13 @@ public class OrderService {
     @Autowired
     private RestTemplate restTemplate;
 
-    @Autowired
-    private UserClient userClient;
 
     public Order queryOrderById(Long orderId){
         Order order=orderMapper.findById(orderId);
 
         return order;
     }
-
-    public Order queryOrderById_Feign(Long orderId){
-        Order order=orderMapper.findById(orderId);
-
-        User user=userClient.findById(order.getUser_id());
-        order.setUser(user);
-
-        return order;
-    }
+    
 
     public Order queryOrderById_RestTemplate(Long orderId){
         Order order=orderMapper.findById(orderId);

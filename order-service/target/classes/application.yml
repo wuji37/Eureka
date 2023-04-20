@@ -9,6 +9,10 @@ spring:
 
   application:
     name: orderService
+
+  cloud:
+    nacos:
+      server-addr: localhost:8848/nacos
 feign:
   client:
     config:
