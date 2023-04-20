@@ -29,20 +29,20 @@ public class UserController {
         return user;
     }
 
-    @Value("${pattern.dateformat}")   //从配置文件中读取值的方法
-    private String dateformat;
-
-    @GetMapping("now")
-    public String now(){
-        System.err.println(dateformat);
-        return LocalDateTime.now().format(DateTimeFormatter.ofPattern(dateformat, Locale.CHINA));
-    }
-
-    @Value("${pattern.sharedDocument}")
-    private String share;
-
-    @GetMapping("prop")
-    public String getSharedDocument(){
-        return share;
-    }
+//    @Value("${pattern.dateformat}")   //从配置文件中读取值的方法
+//    private String dateformat;
+//
+//    @GetMapping("now")
+//    public String now(){
+//        System.err.println(dateformat);
+//        return LocalDateTime.now().format(DateTimeFormatter.ofPattern(dateformat, Locale.CHINA));
+//    }
+//
+//    @Value("${pattern.sharedDocument}")
+//    private String share;
+//
+//    @GetMapping("prop")
+//    public String getSharedDocument(){
+//        return share;
+//    }
 }
